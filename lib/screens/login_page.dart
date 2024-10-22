@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:app_pesa_ms/common_components/default_button.dart';
 import 'package:app_pesa_ms/core.controllers/login_controller.dart';
 import 'package:app_pesa_ms/screens/dashboard_page.dart';
 import 'package:get/get.dart';
@@ -7,82 +10,70 @@ class LoginWidget extends StatelessWidget {
   LoginWidget({super.key});
 
   final LoginController loginControl = Get.put(LoginController());
-
+  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController passwordcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100], // Light blue background
-      body: Center(
-        child: Container(
-          padding: EdgeInsets.all(20),
-          margin: EdgeInsets.only(left: 100, right: 100),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 10,
-                offset: Offset(0, 5),
-              ),
-            ],
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                "Login",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue
+      body: Container(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(50.0),
+            child: Column(
+              children: [
+                // logo
+                Image.asset(
+                  'images/pesamanager_black.png',
+                  height: 100,
                 ),
-              ),
-              SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  border: OutlineInputBorder(),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue),
-                  ),
+                // tilte
+                Text('LOGIN',
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color:  Colors.black)),
+                SizedBox(
+                  height: 10,
                 ),
-              ),
-              SizedBox(height: 10),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue),
-                  ),
+                TextField(
+                  decoration: InputDecoration(
+                      hintText: "Email",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(3),)),
+                  controller: emailcontroller,
                 ),
-              ),
-              SizedBox(height: 10),
-              TextButton(
-                onPressed: () {
-                  // Handle forgot password action
-                },
-                child: Text(
-                  "Forgot Password?",
-                  style: TextStyle(color: Colors.blue[800]),
+                SizedBox(
+                  height: 10,
                 ),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle login action
-                  // For example, navigate to the dashboard
-                  Get.to(() => DasboardWidget());
-                },
-                style: ElevatedButton.styleFrom(
-                  iconColor: Colors.cyanAccent,
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                // subtile
+                TextField(
+                  decoration: InputDecoration(
+                      hintText: "Password",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(3))),
+                  controller: passwordcontroller,
                 ),
-                child: Text("Login"),
-              ),
-            ],
+                SizedBox(
+                  height: 10,
+                ),
+                Text('Forgot Password?',
+                    style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color:Colors.black)),
+                SizedBox(
+                  height: 10,
+                ),
+                // start now button
+                GestureDetector(
+                    onTap: () => Get.to(DasboardWidget()),
+                    child: MyButton(
+                      color:  Colors.black,
+                      borderRadius: BorderRadius.circular(8),
+                      text: "Login",
+                    ))
+              ],
+            ),
           ),
         ),
       ),
