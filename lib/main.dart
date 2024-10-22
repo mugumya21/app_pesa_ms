@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 void main(){
   runApp(GetMaterialApp( debugShowCheckedModeBanner: false,
-    home: LoginWidget(),));
+    home: LoginPage(),));
 }
 
 

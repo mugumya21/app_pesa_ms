@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:app_pesa_ms/common_components/dialog_button.dart';
+import 'package:app_pesa_ms/common_components/my_dialog_button.dart';
 import 'package:flutter/material.dart';
 
 class DialogBox extends StatelessWidget {

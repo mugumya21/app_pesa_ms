@@ -1,13 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:app_pesa_ms/common_components/default_button.dart';
+import 'package:app_pesa_ms/common_components/my_default_button.dart';
 import 'package:app_pesa_ms/core.controllers/login_controller.dart';
 import 'package:app_pesa_ms/screens/dashboard_page.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-class LoginWidget extends StatelessWidget {
-  LoginWidget({super.key});
+class LoginPage extends StatelessWidget {
+  LoginPage({super.key});
 
   final LoginController loginControl = Get.put(LoginController());
   TextEditingController emailcontroller = TextEditingController();
@@ -66,7 +66,7 @@ class LoginWidget extends StatelessWidget {
                 ),
                 // start now button
                 GestureDetector(
-                    onTap: () => Get.to(DasboardWidget()),
+                    onTap: () => Get.to(DashboardPage()),
                     child: MyButton(
                       color:  Colors.black,
                       borderRadius: BorderRadius.circular(8),
