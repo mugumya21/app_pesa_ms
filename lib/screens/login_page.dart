@@ -16,65 +16,68 @@ class LoginPage extends StatelessWidget {
   TextEditingController passwordcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.white,
-      body: Container(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(50.0),
-            child: Column(
-              children: [
-                // logo
-                Image.asset(
-                  'assets/images/pesamanager_black.png',
-                  height: 100,
-                ),
-                // tilte
-                Text('LOGIN',
-                    style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color:  Colors.black)),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                      hintText: "Email",
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(3),)),
-                  controller: emailcontroller,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                // subtile
-                TextField(
-                  decoration: InputDecoration(
-                      hintText: "Password",
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(3))),
-                  controller: passwordcontroller,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text('Forgot Password?',
-                    style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color:Colors.black)),
-                SizedBox(
-                  height: 10,
-                ),
-                // start now button
-                GestureDetector(
-                    onTap: () => Get.to(SideBar()),
-                    child: MyButton(
-                      color:  Colors.black,
-                      borderRadius: BorderRadius.circular(8),
-                      text: "Login",
-                    ))
-              ],
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(backgroundColor: Colors.white,
+        body: Container(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(50.0),
+              child: Column(
+                children: [
+                  // logo
+                  Image.asset(
+                    'assets/images/pesamanager_black.png',
+                    height: 100,
+                  ),
+                  // tilte
+                  Text('LOGIN',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color:  Colors.black)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                        hintText: "Email",
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(3),)),
+                    controller: emailcontroller,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  // subtile
+                  TextField(
+                    decoration: InputDecoration(
+                        hintText: "Password",
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(3))),
+                    controller: passwordcontroller,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text('Forgot Password?',
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color:Colors.black)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  // start now button
+                  GestureDetector(
+                      onTap: () => Get.to(SideBar()),
+                      child: MyButton(
+                        color:  Colors.black,
+                        borderRadius: BorderRadius.circular(8),
+                        text: "Login",
+                      ))
+                ],
+              ),
             ),
           ),
         ),
