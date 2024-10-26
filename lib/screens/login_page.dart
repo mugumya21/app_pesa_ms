@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
   TextEditingController passwordcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(backgroundColor: Colors.white,
         body: Container(
@@ -70,7 +70,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   // start now button
                   GestureDetector(
-                      onTap: () => Get.to(SideBar()),
+                      onTap: () => Get.to(()=>SideBar()),
                       child: MyButton(
                         color:  Colors.black,
                         borderRadius: BorderRadius.circular(8),

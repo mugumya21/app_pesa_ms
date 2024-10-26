@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:app_pesa_ms/common_components/my_botton_nav_bar.dart';
+import 'package:app_pesa_ms/screens/clients_page.dart';
 import 'package:app_pesa_ms/screens/deposits_page.dart';
 import 'package:app_pesa_ms/screens/loans_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../screens/dashboard_page.dart';
 
@@ -82,7 +84,7 @@ class _SideBarState extends State<SideBar> {
                       Icons.people,
                       color: Colors.white,
                     ),
-                    onTap: () {},
+                    onTap: () =>Get.to(()=>ClientPage()),
                     title: Text("Clients"),
                     textColor: Colors.white,
                   ),
